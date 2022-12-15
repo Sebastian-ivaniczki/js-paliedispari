@@ -20,17 +20,43 @@ function getRandomNumber(number){
     return randomNumber;
 }
 
-const cpuNumber = getRandomNumber()
-
-console.log(cpuNumber)
-
 //creo una funzione per per stabilire se la somma dei numeri e pari o dispari
 
 function isEven(number){
-    let result = false
+    let result = number % 2 === 0 ? true : false;
 
-    if(number % 2 === 0){
-        result = true
-    }
     return result;
 }
+
+;
+
+
+
+form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    //prendo i volori del utente 
+    const userNumber = parseInt(numberElement.value.trim())
+    const userChoice = userSelect.value
+    console.log(userChoice)
+ 
+    //console.log(userNumber, userChoice)
+    //genero un numero random per la cpu
+    const cpuNumber = getRandomNumber()
+    console.log(cpuNumber)
+    //sommo il numero della cpu con quello dell'utente
+    const result = isEven(userNumber + cpuNumber)
+    //verifico se il risultato e pari o dispari
+    console.log(result);
+    if(result && userChoice === 'even'){
+        target.innerText = `congratulazioni e uscito pari hai vinto tu`
+    } else{
+        target.innerText = `ha vinto la cpu`
+    }
+
+    if(!result && userChoice === 'shots'){
+        target.innerText = `congratulazioni e uscito dispari hai vinto tu`
+    } else{
+        target.innerText = `ha vinto la cpu`
+    }
+});
