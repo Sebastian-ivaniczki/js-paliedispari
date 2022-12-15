@@ -40,12 +40,12 @@ form.addEventListener('submit', function(e){
     const userChoice = userSelect.value
     console.log(userChoice)
     
-    if(userNumber > 5){
+    if(userNumber > 5 || !userNumber){
         alert('devi inserire un numero  minore o uguale a 5')
         return
     }
 
-    if(userNumber < 1){
+    if(userNumber < 1  || !userNumber){
         alert('devi inserire un numero da maggiore o uguale a 1')
         return
     }
@@ -58,14 +58,12 @@ form.addEventListener('submit', function(e){
     //verifico se il risultato e pari o dispari
     console.log(result);
     
-    if(result && userChoice === 'even'){
-        target.innerText = `congratulazioni e uscito pari hai vinto tu`
-    } else{
-        target.innerText = `ha vinto la cpu`
-    }
+    
 
     if(!result && userChoice === 'shots'){
         target.innerText = `congratulazioni e uscito dispari hai vinto tu`
+    } else if(result && userChoice === 'even'){
+        target.innerText = `congratulazioni e uscito pari hai vinto tu`
     } else{
         target.innerText = `ha vinto la cpu`
     }
