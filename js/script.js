@@ -18,11 +18,13 @@ function palindrome (word){
 }
 // chiedo all'utente di inserire una parola tramite un form
 
-const button = document.getElementById('button');
+const form = document.getElementById('form');
 const userElement = document.getElementById('user-word');
 const target = document.getElementById('target')
 
-button.addEventListener('click', function(){
+form.addEventListener ('submit', function(e){
+    e.preventDefault();
+
     userWord = userElement.value.trim()
     palindrome(userWord)
     console.log(reversWord)
@@ -31,8 +33,6 @@ button.addEventListener('click', function(){
     }else{
         target.innerText = `La parola: ${userWord} non è un palindromo` 
     }
-    
-    
 });
 
 
