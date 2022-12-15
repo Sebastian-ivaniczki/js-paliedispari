@@ -39,7 +39,16 @@ form.addEventListener('submit', function(e){
     const userNumber = parseInt(numberElement.value.trim())
     const userChoice = userSelect.value
     console.log(userChoice)
- 
+    
+    if(userNumber > 5){
+        alert('devi inserire un numero  minore o uguale a 5')
+        return
+    }
+
+    if(userNumber < 1){
+        alert('devi inserire un numero da maggiore o uguale a 1')
+        return
+    }
     //console.log(userNumber, userChoice)
     //genero un numero random per la cpu
     const cpuNumber = getRandomNumber()
@@ -48,6 +57,7 @@ form.addEventListener('submit', function(e){
     const result = isEven(userNumber + cpuNumber)
     //verifico se il risultato e pari o dispari
     console.log(result);
+    
     if(result && userChoice === 'even'){
         target.innerText = `congratulazioni e uscito pari hai vinto tu`
     } else{
