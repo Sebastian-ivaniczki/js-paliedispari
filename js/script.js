@@ -8,10 +8,10 @@ Creare una funzione per capire se la parola inserita è palindroma
 
 function palindrome (word){
    
-    reversWord = ''
+    let reversWord = '';
     for(let i = word.length - 1; i >= 0; i-- ){
-        letter = word[i]
-        reversWord += letter
+       const letter = word[i];
+        reversWord += letter;
     }
     
     return reversWord;
@@ -20,14 +20,14 @@ function palindrome (word){
 
 const form = document.getElementById('form');
 const userElement = document.getElementById('user-word');
-const target = document.getElementById('target')
+const target = document.getElementById('target');
 
 form.addEventListener ('submit', function(e){
     e.preventDefault();
 
     userWord = userElement.value.trim()
-    palindrome(userWord)
-    console.log(reversWord)
+    palindrome(userWord);
+    
     if(userWord === reversWord){
         target.innerText = `La parola: ${userWord} è un palindromo`
     }else{
